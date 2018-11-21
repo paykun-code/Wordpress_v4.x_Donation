@@ -19,8 +19,8 @@ Note : Once you re-generate api key your old api key will stop working immediate
   3. Activate the plugin through the left side 'Plugins' menu in WordPress.
   4. Now you will see new menu in your Wordpress admin called 'Paykun Donation' 
   6. Click on Paykun Donation > Settings
-  7. Enter all the required details provided by paykun.
-  8. Now you can see Paykun in your payment option.
+  7. Enter all the required details provided by paykun. Follow step 9 to check which detail is required.
+  8. Add short code [paykuncheckout] either in page or post to display payment form
   9. Save the below configuration.
       * Merchant Id                     - Staging/Production Merchant Id provided by Paykun
       * Access Token                    - Staging/Production Access Token provided by Paykun
