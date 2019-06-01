@@ -402,33 +402,13 @@ class Payment {
                         <td><input type="hidden" name="access_token" id="access_token" value="'.$formData['access_token'].'"></td>
                     </tr>
                 </table>
-                <input type="submit" class="button-alt" id="submit_paykun_payment_form" value="'.__('Pay via Paykun').'" /> 
-                <a class="button cancel" href="'.$url.'">'.__('Cancel order &amp; restore cart').'</a>
+                
             </form>
             <script type="text/javascript">
-jQuery(function(){
-    jQuery("body").block(
-            {
-                message: "'.__('Thank you for your order. We are now redirecting you to Paykun to make payment.').'",
-                    overlayCSS:
-				{
-					background: "#fff",
-                    opacity: 0.6
-				},
-			css: {
-				padding:        20,
-                textAlign:      "center",
-                color:          "#555",
-                border:         "3px solid #aaa",
-                backgroundColor:"#fff",
-                cursor:         "wait",
-                lineHeight:"32px"
-			}
-        });
-        jQuery("#submit_paykun_payment_form").click();
-        });
-                    </script>
-        ';
+                jQuery(function(){
+                    window.document.server_request.submit();
+                });
+            </script>';
         return $htmlEntity;
     }
 

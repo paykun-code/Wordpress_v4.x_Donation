@@ -365,51 +365,94 @@ function paykun_donation_form(){
             );
             $html = '<form name="frmTransaction" method="post">
 					<p>
-						<label class="pk_lbl" for="donor_name">Name:<em>*</em></label>
-						<input type="text" name="donor_name" maxlength="255" value="" required/>
+						<label class="pk_lbl" for="donor_name">
+						Name:<em>*</em>
+						<input class="pk_input" type="text" name="donor_name" maxlength="255" value="" required/>
+						</label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_email">Email:<em>*</em></label>
-						<input type="text" name="donor_email" maxlength="255" value="" required/>
+						<label class="pk_lbl" for="donor_email">Email:<em>*</em>
+						<input class="pk_input" type="text" name="donor_email" maxlength="255" value="" required/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_phone">Phone:<em>*</em></label>
-						<input type="text" name="donor_phone" maxlength="15" value="" required/>
+						<label class="pk_lbl" for="donor_phone">Phone:<em>*</em>
+						<input class="pk_input" type="text" name="donor_phone" maxlength="15" value="" required/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_amount">Amount:<em>*</em></label>
-						<input type="text" name="donor_amount" maxlength="10" value="'.trim(get_option('paykun_amount')).'" required min="10" '.$isAmountReadOnly.'/>
+						<label class="pk_lbl" for="donor_amount">Amount:<em>*</em>
+						<input class="pk_input" type="text" name="donor_amount" maxlength="10" value="'.trim(get_option('paykun_amount')).'" required min="10" '.$isAmountReadOnly.'/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_address">Address:'.$optionalOrMustFields['addressReq'].'</label>
-						<input type="text" name="donor_address" maxlength="255" value="" '.$optionalOrMustFields['address'].'/>
+						<label class="pk_lbl" for="donor_address">Address:'.$optionalOrMustFields['addressReq'].'
+						<input class="pk_input" type="text" name="donor_address" maxlength="255" value="" '.$optionalOrMustFields['address'].'/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_city">City:'.$optionalOrMustFields['cityReq'].'</label>
-						<input type="text" name="donor_city" maxlength="255" value="" '.$optionalOrMustFields['city'].'/>
+						<label class="pk_lbl" for="donor_city">City:'.$optionalOrMustFields['cityReq'].'
+						<input class="pk_input" type="text" name="donor_city" maxlength="255" value="" '.$optionalOrMustFields['city'].'/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_state">State:'.$optionalOrMustFields['stateReq'].'</label>
-						<input type="text" name="donor_state" maxlength="255" value="" '.$optionalOrMustFields['state'].'/>
+						<label class="pk_lbl" for="donor_state">State:'.$optionalOrMustFields['stateReq'].'
+						<input class="pk_input" type="text" name="donor_state" maxlength="255" value="" '.$optionalOrMustFields['state'].'/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_postal_code">Postal Code:'.$optionalOrMustFields['zipReq'].'</label>
-						<input type="text" name="donor_postal_code" maxlength="10" value="" '.$optionalOrMustFields['zip'].'/>
+						<label class="pk_lbl" for="donor_postal_code">Postal Code:'.$optionalOrMustFields['zipReq'].'
+						<input class="pk_input" type="text" name="donor_postal_code" maxlength="10" value="" '.$optionalOrMustFields['zip'].'/></label>
+						
 					</p>
 					<p>
-						<label class="pk_lbl" for="donor_country">Country:'.$optionalOrMustFields['countryReq'].'</label>
-						<input type="text" name="donor_country" maxlength="255" value="" '.$optionalOrMustFields['country'].'/>
+						<label class="pk_lbl" for="donor_country">Country:'.$optionalOrMustFields['countryReq'].'
+						<input class="pk_input" type="text" name="donor_country" maxlength="255" value="" '.$optionalOrMustFields['country'].'/></label>
+						
 					</p>
 					<p>
 						<input type="hidden" name="action" value="paykun_donation_request">
-						<input type="submit" value="' . trim(get_option('paykun_content')) .'"/>
+						<span class="pk-btn-container">
+                            
+                            <button type="submit" class="pk_btn">' . trim(get_option('paykun_content')) .'
+                            <img class="pk-logo" src="'.esc_url(plugins_url( 'images/paykun-logo.svg', __FILE__)).'"></button>
+                            
+                        </span>
+						
 					</p>
 					<style type="text/css">
+					.pk-logo {vertical-align: middle;margin-left: 10px;}
+					.pk-btn-container {display: inline-block;padding: 10px;}
+					.pk_input{
+					display: inline-block !important;
+					margin-left: 15px !important;
+					width: 65%;
+					}
 					.pk_lbl{
-					    width: 34%;
+					    width: 50%;
                         display: inline-block;
                         text-align: right;
                         padding-right: 7px;
+					}
+					.pk_btn{
+						position: relative;
+					    display: inline-block;
+					    min-height: 38px;
+					    width: 240px;
+					    padding: 10px;
+					    margin: 0px;
+					    line-height: 18px;
+					    font-weight: 600;
+					    font-size: 14px;
+					    font-family: Lato, Muli, -apple-system, BlinkMacSystemFont, Arial, sans-serif;
+					    word-break: break-word;
+					    border-radius: 2px;
+					    text-align: center;
+					    background-color: #528FF0;
+					    color: #fff;
+					    box-shadow: 0 0 24px 0 rgba(0,0,0,0.2);
+					    z-index: 2;
 					}
                     </style>
 				</form>';
