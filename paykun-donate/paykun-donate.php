@@ -422,7 +422,7 @@ function paykun_donation_form(){
 						
 					</p>
 					<style type="text/css">
-					.pk-logo {vertical-align: middle;margin-left: 10px;}
+					.pk-logo {vertical-align: middle;margin-left: 10px; background: transparent !important;}
 					.pk-btn-container {display: inline-block;padding: 10px;}
 					.pk_input{
 					display: inline-block !important;
