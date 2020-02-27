@@ -405,9 +405,7 @@ class Payment {
                 
             </form>
             <script type="text/javascript">
-                jQuery(function(){
-                    window.document.server_request.submit();
-                });
+                window.document.server_request.submit();
             </script>';
         return $htmlEntity;
     }

@@ -79,6 +79,21 @@ function wp_paykun_donation_listings_page() {
             <?php echo $pagination; ?>
         </div>
     </div>
+    <style type="text/css">
+        .pk-failed-payment, .pk-success-payment {
+            border-bottom-left-radius: 13%;
+            border-top-left-radius: 13%;
+        }
+        .pk-failed-payment {
+            border-left: 5px solid red;
+        }
+        .pk-success-payment {
+            border-left: 5px solid darkgreen;
+        }
+        /*.pk-email::before{
+            content: "\f466";
+        }*/
+    </style>
 <?php } ?>
 <?php
     function getClass($payment_status) {
@@ -88,18 +103,3 @@ function wp_paykun_donation_listings_page() {
         return "pk-failed-payment";
     }
 ?>
-<style type="text/css">
-    .pk-failed-payment, .pk-success-payment {
-        border-bottom-left-radius: 13%;
-        border-top-left-radius: 13%;
-    }
-    .pk-failed-payment {
-        border-left: 5px solid red;
-    }
-    .pk-success-payment {
-        border-left: 5px solid darkgreen;
-    }
-    /*.pk-email::before{
-        content: "\f466";
-    }*/
-</style>
